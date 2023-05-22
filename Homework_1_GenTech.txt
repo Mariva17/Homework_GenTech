@@ -1,0 +1,35 @@
+1. Онлайн-обучение:
+	1) регистрация пользователя - Create
+	2) просмотр каталога - Read
+	3) добавление выбранного курса - Update
+	4) прохождение выбранного курса - Read
+	5) оплата курса - Update - is_paid
+	6) получение сертификата - Update
+
+2. Вывести все товары в диапазоне цены от 10 до 100, отсортированные по названию.
+SELECT * 
+FROM Products
+WHERE Price BETWEEN 10 AND 100
+ORDER BY ProductName
+
+3. Для клиентов не из Германии и не из Франции очистить адрес.
+UPDATE Customers
+SET Address=''
+WHERE NOT Country='Germany' AND 'France'
+
+4. Удалить (безвозвратно) клиентов из 'USA'.
+DELETE FROM Customers
+WHERE Country='USA'
+
+
+5. Вывести всех поставщиков (suppliers) из Токио, Япония, отсортированные по имени.
+SELECT * 
+FROM Suppliers
+WHERE Country='Japan' AND City='Tokyo'
+ORDER BY SupplierName
+
+6. Вывести товары из категорий 1 и 5 с ценой до 20 EURO с сортировкой по возрастанию цены. 
+SELECT * 
+FROM Products
+WHERE CategoryID IN (1, 5) AND Price <= 20
+ORDER by Price ASC
